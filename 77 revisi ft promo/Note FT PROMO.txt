@@ -1,0 +1,42 @@
+-----------------------------------------PERBANDINGAN FILE YA -----------------------------------------
+SELECT * FROM (SELECT A.DC,A.TOKO,A.PLU,A.FT_PROMOSI AS FT_TOKO, b.FT AS FT_PBE,
+CASE WHEN (A.FT_PROMOSI = B.FT) THEN 'SAMA' ELSE 'BEDA' END AS HASIL FROM FT_TOKO_TES A, PBE_TES B WHERE A.PLU=B.PLUMD (+) AND A.TOKO='T001')A
+WHERE A.HASIL!='SAMA' 
+
+
+-----------------------------------------check nilai ft final -----------------------------------------
+SELECT f.KD_TOKO,c.FT_NO,E.KD_PLU,f.ID_toko FROM HO_PROPOSAL_PROMOSI_T@MTX_HO  A, HO_MEKANISME_PROMOSI_T@MTX_HO B, MCGDATA.TR_FT_RO@MCG_HO C, 
+MCGDATA.MS_SETUP_FT@MCG_HO D, mcgdata.TR_FT_STORE@mcg_ho E, MCGDATA.VU_MSTOKO@MCG_HO F
+WHERE A.PRO_ID = B.PRO_MEK_FK_ID
+	AND A.PRO_NO_SEP = C.NO_SEP
+	AND C.FT_ID = D.FT_ID
+	AND C.FT_NO = E.FT_NO
+	AND E.ID_TOKO = F.ID_TOKO
+	AND B.PRO_MEK_ID = E.MEK_ID -----tambahan hendra, data double	
+	AND A.PRO_NO ='142357/P/09/2022'
+	AND f.kd_toko = 'FB6M'
+	AND E.KD_PLU='10004669'
+	AND e.ft > 0 --TAMBAHAN MARTIN 2022-02-16
+
+
+-----------------------------------------check nilai ft final file ft -------------------------------
+SELECT b.ID_TOKO,  A.KD_PLU, --MAX(A.ft_termin) AS ft_termin --edit by salman
+     (MAX(CASE WHEN A.jenis_promosi IS NULL THEN A.ft_termin ELSE 0 END)) + (MAX(CASE WHEN A.jenis_promosi = 'ECOM' THEN A.ft_termin ELSE 0 END)) AS ft_termin   
+          FROM TR_FT_TERMIN_KIRIM A, vu_mstoko b 
+          WHERE A.id_toko = b.id_toko 
+          --AND TRUNC(SYSDATE)+1 BETWEEN TO_DATE(A.TGL_TERMIN_AWAL) AND TO_DATE(A.TGL_TERMIN_AKHIR) 
+          --AND A.status IS NULL 
+		  AND A.KD_PLU ='10004669'
+		  AND A.id_toko='29682'
+		  AND A.ft_no='9735/EV/220922'	  
+          --AND tgl_akhir_ft >= TRUNC(SYSDATE) 
+          GROUP BY b.ID_TOKO, A.KD_PLU;
+
+
+
+
+
+
+
+
+

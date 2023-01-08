@@ -1,0 +1,10 @@
+Kategori|Sub_Kategori|Tipe_Sub|Pilihan_Sub|Addid|Addtime|Sesuai|Tidak
+01 Kondisi Gudang Toko IDM|Barang bulky tersusun dengan rapi|3|Sesuai/Tidak|SB2207T|23-07-2022 13:18:26|Y|N
+01 Kondisi Gudang Toko IDM|Barang eceran di gudang Toko Idm. tersusun rapi sesuai program|3|Sesuai/Tidak|SB2207T|23-07-2022 13:18:26|0|0
+01 Kondisi Gudang Toko IDM|Tidak ada tumpukan barang (karton/container) yang menutupi rak gudang Toko Idm.|3|Sesuai/Tidak|SB2207T|23-07-2022 13:18:26|0|0
+01 Kondisi Gudang Toko IDM|Tidak ada barang di karton yang terisi campuran/ banyak item(s)|3|Sesuai/Tidak|SB2207T|23-07-2022 13:18:26|0|0
+01 Kondisi Gudang Toko IDM|Barang rusak sudah dipisahkan dan sudah dibuat NRB;|3|Sesuai/Tidak|SB2207T|23-07-2022 13:18:26|0|0
+01 Kondisi Gudang Toko IDM|Tidak ada Barang dalam Container > 2 (dua) hari belum di-display;|3|Sesuai/Tidak|SB2207T|23-07-2022 13:18:26|0|0
+02 Kondisi Komputer|Jumlah komputer dalam kondisi tidak lambat dan tidak sering errors;|1||SB2207T|23-07-2022 13:18:26|0|0
+03 Kondisi DVR|Jumlah DVR rekaman CCTV dalam kondisi dapat merekam/tidak rusak;|1||SB2207T|23-07-2022 13:18:26|0|0
+04 Kondisi Kamera CCTV|Jumlah kamera CCTV dalam kondisi tidak ada yang rusak (kondisi baik);|1||SB2207T|23-07-2022 13:18:26|0|0

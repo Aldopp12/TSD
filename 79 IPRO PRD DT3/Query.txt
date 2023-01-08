@@ -1,0 +1,52 @@
+
+------------------------------------------------------
+Pemdanding_Data1  --Merupakan Procedure pembanding data exsisting dan data tabel PLU_BKL_BARU
+
+
+
+------------------------------------------------------
+
+
+SELECT TBL_DC_KODE, MBR_PLUID, MBR_FK_DIV,
+MBR_FK_DEP, MBR_FK_KAT, MBR_FULL_NAMA,
+MBR_SINGKATAN, MBR_MERK, MBR_NAMA,
+MBR_FLAVOUR, MBR_KEMASAN, MBR_SIZE,
+MBR_BKP, MBR_OPTION_BKP, MBR_UMUR_BLN,
+MBR_UMUR_HRI, MBR_FLAG_HBRAND, MBR_SAT_JUAL_PCS,
+MBR_PCS_JUAL_PCS, MBR_PANJANG_PCS, MBR_LEBAR_PCS,
+MBR_TINGGI_PCS, MBR_BERAT_PCS, MBR_SAT_JUAL_CTN,
+MBR_PCS_JUAL_CTN, MBR_PANJANG_CTN, MBR_LEBAR_CTN,
+MBR_TINGGI_CTN, MBR_BERAT_CTN, MBR_TAG,
+MBR_BKL, MBR_MINOR, MBR_TGL_TAMBAH,
+MBR_KELIPATAN_MINOR, MBR_MINOR_TOKO, MBR_FLAGMD,
+MBR_PERISHABLE, MBR_SAT_FRAC, MBR_PCS_FRAC,
+MBR_TGL_BERLAKU, MBR_FK_SUPID, MBR_HARGA_BELI,
+MBR_PPN, MBR_PPN_BM, MBR_PPN_BOTOL,
+MBR_TOP, MBR_PERLAKUAN_BARANG, MBR_LEAD_TIME,
+MBR_FREKWENSI_KIRIM, MBR_SAT_BELI, MBR_PCS_BELI,
+MBR_TOTAL_DISC, UMUR_PRODUK, STATUS_PRODUK,
+(CASE F_UMUR_BRG WHEN'Y' THEN'Y' WHEN'X' THEN'N' WHEN'N' THEN'N' END) F_UMUR_BRG,
+MAX_UMUR_BRG, MAX_UMUR_BRG_S, MAX_UMUR_BRG_DCI, MAX_UMUR_BRG_DCI_S,
+MAX_RET_TOKO2DCI, MAX_RET_TOKO2DCI_S, MAX_RET_DCI2SUPP, MAX_RET_DCI2SUPP_S
+, POT, MBR_CAKE, BATAS_RETUR_MJLH, tgl_berlaku, FLAG_PROCMT
+, FLAG_DCP
+, F_EXPIRED
+FROM TRF_BARANG_DC_KL WHERE TBL_DC_KODE='G001' AND MBR_PLUID IN (SELECT KD_PLU FROM mcgdata.PLU_BKL_BARU@mcg_ho WHERE KD_DC='G001')
+
+
+PLU_BKL_BARU@mcg_ho
+
+SELECT KD_PLU FROM mcgdata.PLU_BKL_BARU@mcg_ho WHERE KD_DC='G001'
+
+SELECT A.kd_dc, w.fmkode, w.fmkdiv, w.fmkdep, w.fmkatb,
+                 Cari_Desk_Produk (w.fmkode) AS full_nama, w.fmdesk, w.fmmerk,
+                 w.fmnama, w.fmflav, w.fmkmsn, w.fmsize, w.fmfbkp,
+                 w.option_bkp, w.fmubln, w.fmuhri, w.home_brand, w.fmsat1,
+                 w.fmisi1, w.fmdmip, w.fmdmil, w.fmdmit, w.fmibpc, w.fmsat3,
+                 w.fmisi3, w.fmkmkp, w.fmkmkl, w.fmkmkt, w.fmibkr, f_umur_brg,
+                 max_umur_brg, max_umur_brg_s, max_umur_brg_dci,
+                 max_umur_brg_dci_s, max_ret_toko2dci, max_ret_toko2dci_s,
+                 max_ret_dci2supp, max_ret_dci2supp_s, batas_retur_mjlh
+            FROM M_PLU_PER_DC1_KL A, mcgdata.M_PRODUK@mcg_ho w, mcgdata.PLU_BKL_BARU@mcg_ho F
+           WHERE A.kd_plu = fmkode AND A.kd_dc = 'G001'
+		   AND A.KD_PLU=F.KD_PLU AND A.KD_DC = F.KD_DC
