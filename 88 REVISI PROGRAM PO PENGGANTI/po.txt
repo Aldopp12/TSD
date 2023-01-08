@@ -1,0 +1,120 @@
+Alur validasi PO Penganti WEB pake no po UHBM75936     UHBM75941  1HCM75944
+
+*VALIDASI*
+- Check Po Penganti di tabel M_PO_PENGGANTI.NO_PO= inputan Po jika terdapat maka Warning:"Tidak bisa proses , PO sudah pernah diganti!!"
+- Check data di MD_TSTOCK.FHNOPO jika terdapat maka lanjut jika tidak terdapat maka Warning:"PO " + NOPO + " Sudah di BPB, Tidak Bisa Revisi PO"
+- Check data SELECT fhksbu, fhkwil, fhkcab,TO_CHAR( fhtgpo+fhjwpb, 'DD-MON-YYYY') date_tmp,fhftah,TO_CHAR (NVL(fhtahn, 0))fhtahn,TO_CHAR(hari_kirim,'DD-MON-YYYY')hari_kirim, fhnopo, fhnouo  
+FROM mh_poord WHERE fhnopo= inputan po
+	- jika FHNOPO terdapat maka jika tidak terdapat Warning:"Invalid PO Number !"
+		- Check SYSDATE <= date_tmp maka Warning:"PO Tidak Valid , PO belum Expired !!"
+		- Check SYSDATE > DATE_TMP+14 maka Warning:"PO tidak valid , maksimal expired adalah 14 hari sejak tanggal  " + date.AddDays(14).ToString("dd-MMM-yyyy"); (RENCANA DIGANTI CHECK JAWA ATAU LUAR JAWA)
+		- Check FHKWILL != inputan wilayah maka Warning:"Rep PO Tidak Valid Pengguna Wilayah tidak valid"
+		- Check getdatavalidasi1.FHKSBU != OPU || getdatavalidasi1.FHKWIL != Will || getdatavalidasi1.FHKCAB != Cab maka Warning:"Rep PO Tidak Valid, OPU atau Wilayah atau Cabang tidak valid"
+		- Check FHFTAH =='Y' maka 
+		- Check FHTAHAN > 0 maka
+		
+		
+ketika simpan 
+akan generate no Uo dengan function Uo_Number 
+
+Po_Number simulasi dan prod beda ya
+
+
+jalankan Poref_Update_2_MVC paramter p_refpo=''
+"INSERT INTO MH_USORD (FHNOUO ,FHTGUO, FHKSBU, FHKWIL, FHKCAB, FHKETR, FHRFPO, FHNOPB, FHKVIA, FHTAHN, FHFPPO,FHUSER, TGL_KIRIM,FHFTAH, FHFGOD, PO_PENGGANTI, FHIPAD, FHTGUP) Values('NO UO BARU' ,SYSDATE, '3', 'JKT', 'G001', 'Pengganti PO No UHBM75936', '', '', '1', '', '','SUPPORTHO', '','N', 'N', 'Y', '127.0.0.1', SYSDATE)" --selain NO UO DAN TGL PO semua copy dari yang lama
+"UPDATE mh_poord SET fhrcid ='1' , fhtgup = SYSDATE, fhipad = '127.0.0.1' WHERE fhnopo = ''" --kalo revisi
+"UPDATE mh_poord SET fhrcid ='1' , fhtgup = SYSDATE, fhipad = '127.0.0.1' WHERE fhnopo = ''" --kalo revisi
+"UPDATE md_order  SET fdrcid ='1' , fdtgup = SYSDATE, fdipad = '127.0.0.1' WHERE fdnopo = ''" --kalo revisi
+
+SELECT  FDNOUO,FDKODE,FDQTYB,FDQTYF,FDSATB,FDISIP,FDHSAT,FDJTOP,FDDISC,FDTPPN, FDNOPO, FDTGPO, FDTGUO FROM MD_ORDER where FDNOUO='" + FDNOUO + "' and FDKODE ='" + FDKODE + "'
+
+" insert into MD_ORDER (FDNOUO,FDKODE,FDQTYB,FDQTYF,FDSATB,FDISIP,FDHSAT,FDJTOP,FDDISC,FDTPPN,FDTGUP,FDUSER, FDKSUP, FDDVPO, FDTNIL, FDTPPM, FDTBTL, FDTPPI,FDKSBU,FDKWIL,FDKCAB, FDTGUO, FDFBNS, FDFDIS, FDJNSH, FDTGBU, FDJWPB, FDKDIV, FDOBKP, FDIPAD, FDIPLT ) select '647138UBN','20033450','1','0','CTN','30','112753.64','28','0','12402.9',SYSDATE,'SUPPORTHO','10829', 'Z', '112753', '0', '0', '0', '3' , 'JKT' ,'G001' , '30-Nov-2022' , 'Y' , 'Y', '32', '31-DEC-2017', '1',   fmkdiv, CASE WHEN option_bkp NOT IN ('P', 'G', 'W') THEN 'x' ELSE option_bkp   END AS BKP, '127.0.0.1'IPLOG, 'x' PLT  FROM m_produk WHERE FMKODE = '20033450' "
+
+
+
+SELECT PO_GUDANG, PO_NO_PO, PO_TGL_PO, PO_NO_PB, PO_TGL_PB, PO_NILAI, PO_PPN, PO_PPNBM, PO_PPN_BOTOL, PO_SUPCO_MD, PO_TOP, PO_UMUR, PO_NO_PO_REVISI, PO_TAHAN_BAYAR, PO_PERPANJANG_TOP, PO_TGL_UPDATE, PO_RECID, PO_SUPCO_DC, PO_JENIS_PB, PO_EXPIRED, PO_TGL_KIRIM, PO_JAM_BONGKAR, PO_NAMA_PB, PO_JALUR_BONGKAR, PODTL_PLUMD, PODTL_ISI_SATB, PODTL_SATB, PODTL_QTYB, PODTL_FRAC_QTYB, PODTL_PRICE, PODTL_DISC, PODTL_TNIL, PODTL_PPN, PODTL_PPNBM, PODTL_PPN_BTL, PODTL_BONUS, PODTL_JNS_HRGBELI, PODTL_TGL_HRGBELI, PODTL_PLU, PODTL_OPTION_BKP, PODTL_JENIS_PO, PODISC_FK_NO_PO, PODISC_TYPE, PODISC_NILAI, PODISC_PLU_DC, PODISC_FK_PLU, POBNS_FK_NO_PO, POBNS_FK_PLU, POBNS_QTY, POBNS_PLUBNS_MD, PO_TGL_KIRIM_DS, PO_KODE_TOKO, PODTL_PPN_PERSEN FROM POV_TEST WHERE FHNOPO = 'UHBM75941' AND FHKCAB = 'G001'
+
+SELECT * FROM MH_USORD WHERE FHNOUO ='6471431CN'
+
+M_PO_PENGGANTI
+
+M_PRODUK
+
+SELECT * FROM MH_POORD WHERE FHNOUO='6471431CN'
+
+SELECT * FROM MD_ORDER WHERE FDNOUO='6471431CN'--'6471431CN'--'6471421CN'6471431CN
+
+SELECT * FROM MD_ORDER WHERE FDNOPO='UHBM75936'
+
+SELECT * FROM MH_POORD WHERE FHNOUO='6471421CN'
+
+SELECT * FROM MH_POORD WHERE FHNOUO='6471421CN'
+
+SELECT * FROM M_PO_PENGGANTI WHERE no_po='1HCM75944'
+
+SELECT NVL('Y','N') FROM dual
+
+Pengganti PO NO UHBM75941
+
+T_PO_TYPE
+
+Process_Uo_Mvc
+
+Process_Uo_Mvc
+Po_Number
+
+Process_Uo_Mvc
+
+T_EMAIL_JOBWS
+
+T_PAJAK
+
+T_CABANG
+
+SELECT DISTINCT KD_Dc FROM vu_MSTOKO
+
+LOG_WS_HODB
+
+SELECT * FROM MD_TSTOCK
+
+ SELECT fhksbu, fhkwil, fhkcab,FHTGPO,TO_CHAR( fhtgpo+fhjwpb, 'DD-MON-YYYY') date_tmp,fhftah,TO_CHAR (NVL(fhtahn, 0))fhtahn,TO_CHAR(hari_kirim,'DD-MON-YYYY')hari_kirim, fhnopo, fhnouo  
+FROM MH_POORD WHERE  fhnopo='UHBM75936'
+
+SELECT * FROM MH_USORD WHERE FHNOUO='647133UBN'
+
+UPDATE MH_POORD SET fhtgpo=SYSDATE-10 WHERE fhnopo='2HCM75945'
+
+SELECT * FROM M_PO_PENGGANTI
+
+SELECT * FROM T_PO_TYPE WHERE FTNOUO='647138UBN'
+
+INSERT INTO M_PO_PENGGANTI VALUES ('" + Po_pengganti + "', SYSDATE)
+
+Process_Uo_Mvc
+
+MH_USORD
+
+MH_POORD
+
+MD_ORDER
+
+PO_NEWPRODUK_IGR
+
+
+Poref_Update_2_Mvc
+
+Process_Uo_Mvc
+
+SELECT * FROM MH_USORD WHERE FHNOUO='647138UBN'
+
+SELECT * FROM MD_ORDER WHERE FDNOUO='647136UBN'
+
+SELECT uo_seq.NEXTVAL FROM dual
+
+Uo_Number 
+
+Md_Order_Get_Curr_Supp
+
+Md_Order_Hgbeli_Desc
+
+Md_Order_Calculate_Detail

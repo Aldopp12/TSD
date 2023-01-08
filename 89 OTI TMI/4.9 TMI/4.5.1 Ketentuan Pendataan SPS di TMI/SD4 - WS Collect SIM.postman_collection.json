@@ -1,0 +1,769 @@
+{
+	"info": {
+		"_postman_id": "a6b2faa6-6e0e-423b-88f2-c74f665672d3",
+		"name": "SD4 - WS Collect SIM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8030208"
+	},
+	"item": [
+		{
+			"name": "GenerateToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"user\":{\"user\":\"it-sd4\",\"pass\":\"1T_5d4\"}}"
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterface/Service1.svc/rest/GenerateToken/",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterface",
+						"Service1.svc",
+						"rest",
+						"GenerateToken",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateToken SIM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"user\":{\"user\":\"it-sd4\",\"pass\":\"1T_5d4\"}}"
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterfacetest/Service1.svc/rest/GenerateToken/",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterfacetest",
+						"Service1.svc",
+						"rest",
+						"GenerateToken",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MstDepartment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3Rpbmctc2QyIiwibmJmIjoxNjQ2NzMzNzk3LCJleHAiOjE2NDY3MzQ5OTcsImlhdCI6MTY0NjczMzc5N30.iwJWaObJBv3-wCDiypDpDt4L6LVHAC7D-K22E2OY4ac",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mdl\":{\"Level\":\"all\",\"KodeDepartemen\":\"all\",\"NamaDepartemen\":\"all\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterface/Service1.svc/rest/MstDepartment/",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterface",
+						"Service1.svc",
+						"rest",
+						"MstDepartment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MstPejabatSD4",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3Rpbmctc2QyIiwibmJmIjoxNjQ2NzMzNzk3LCJleHAiOjE2NDY3MzQ5OTcsImlhdCI6MTY0NjczMzc5N30.iwJWaObJBv3-wCDiypDpDt4L6LVHAC7D-K22E2OY4ac",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mdl\":{\"Level\":\"all\",\"KodeDepartemen\":\"all\",\"NamaDepartemen\":\"all\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://presensionline.indomaret.lan/ServiceOprInterfaceTest/Service1.svc/rest/MstPejabatSD4/",
+					"protocol": "http",
+					"host": [
+						"presensionline",
+						"indomaret",
+						"lan"
+					],
+					"path": [
+						"ServiceOprInterfaceTest",
+						"Service1.svc",
+						"rest",
+						"MstPejabatSD4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetKaryawanByNIK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IService1/GetKaryawanByNIK",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <s:Body>\r\n    <GetKaryawanByNIK xmlns=\"http://tempuri.org/\">\r\n      <nik>2015373935</nik>\r\n    </GetKaryawanByNIK>\r\n  </s:Body>\r\n</s:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterface/Service1.svc",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterface",
+						"Service1.svc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetREV (Token)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3Rpbmctc2QyIiwibmJmIjoxNjUxMjIzMjcwLCJleHAiOjE2NTEyMjQ0NzAsImlhdCI6MTY1MTIyMzI3MH0.AM8DT7ejINfIqJPo5oiYFq6BPVbN1nBNOwLBmdPelPU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mdl\":{\"KodeGudang\":\"all\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterfaceTest/Service1.svc/rest/GetRev/",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterfaceTest",
+						"Service1.svc",
+						"rest",
+						"GetRev",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUSU (Token)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Iml0LWFnY2kiLCJuYmYiOjE2NTAzNTY0MDYsImV4cCI6MTY1MDM1NzYwNiwiaWF0IjoxNjUwMzU2NDA2fQ.ygugwwEVxrmcDLMB9vW5_erGf5Nzg_iXOv90zNk984s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mdl\":{\"KodeGudang\":\"all\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterfaceTest/Service1.svc/rest/GetUSU/",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterfaceTest",
+						"Service1.svc",
+						"rest",
+						"GetUSU",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMKY (Token)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Iml0LWFnY2kiLCJuYmYiOjE2NTAzNTY0MDYsImV4cCI6MTY1MDM1NzYwNiwiaWF0IjoxNjUwMzU2NDA2fQ.ygugwwEVxrmcDLMB9vW5_erGf5Nzg_iXOv90zNk984s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mdl\":{\"NIK\":\"all\",\"Jabatan\":\"all\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterfaceTest/Service1.svc/rest/GetMKY/",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterfaceTest",
+						"Service1.svc",
+						"rest",
+						"GetMKY",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MstJmlKaryawan (Token)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Iml0LWFnY2kiLCJuYmYiOjE2NTAzNTY0MDYsImV4cCI6MTY1MDM1NzYwNiwiaWF0IjoxNjUwMzU2NDA2fQ.ygugwwEVxrmcDLMB9vW5_erGf5Nzg_iXOv90zNk984s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mdl\": {\r\n        \"Periode_Standarisasi\": \"all\",\r\n        \"Kode_Toko\": \"all\",\r\n        \"TOKID\": \"all\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.20.12.31/ServiceOprInterfaceTest/Service1.svc/rest/MstJmlKaryawan/",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"12",
+						"31"
+					],
+					"path": [
+						"ServiceOprInterfaceTest",
+						"Service1.svc",
+						"rest",
+						"MstJmlKaryawan",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_ALL_TM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_ALL_TM",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_ALL_TM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_TM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_TM|TOKID",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_TM|TOKID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_ALL_TS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_ALL_TS",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_ALL_TS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_TS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_TS|TOKID",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_TS|TOKID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_ALL_TO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_ALL_TO",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_ALL_TO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_TO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_TO|T001",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_TO|T001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_ALL_LR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_ALL_LR",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_ALL_LR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_LR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_LR|T1A9",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_LR|T1A9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_ALL_ORG",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_ALL_ORG",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_ALL_ORG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_ORG",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_ORG|KODE CABANG|KODE TOKO",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_ORG|KODE CABANG|KODE TOKO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_KAR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_KAR|KODE CABANG|KODE TOKO",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_KAR|KODE CABANG|KODE TOKO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DATA_ALL_KAR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://appapi1.indomaret.lan:8800/api/MASTER/GET_DATA_ALL_KAR",
+					"protocol": "http",
+					"host": [
+						"appapi1",
+						"indomaret",
+						"lan"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"MASTER",
+						"GET_DATA_ALL_KAR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_MS_RAK_TMI",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://172.31.26.92:81/member/rack/get",
+					"protocol": "http",
+					"host": [
+						"172",
+						"31",
+						"26",
+						"92"
+					],
+					"port": "81",
+					"path": [
+						"member",
+						"rack",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_MS_TOKO_TMI",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://172.31.26.92:81/member/get",
+					"protocol": "http",
+					"host": [
+						"172",
+						"31",
+						"26",
+						"92"
+					],
+					"port": "81",
+					"path": [
+						"member",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TokenTMISD1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "pBkXAuhIINfqpHve0XmLNGcAIhSqflTnHqKiHU2x",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "*",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://172.31.26.92:81/v1/oauth/token",
+					"protocol": "http",
+					"host": [
+						"172",
+						"31",
+						"26",
+						"92"
+					],
+					"port": "81",
+					"path": [
+						"v1",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

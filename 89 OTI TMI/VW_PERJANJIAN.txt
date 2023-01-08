@@ -1,0 +1,69 @@
+CREATE OR REPLACE VIEW VW_PERJANJIAN
+(NO_PERJANJIAN, KD_UNIT, KD_CABANG, KD_SUPPLIER, TGL_AWAL, 
+ TGL_AKHIR, SATUAN_SEWA, LAMA_HRG, LAMA_SEWA, TGL_PERJANJIAN, 
+ KD_DISPLAY, TOTAL_NILAI, SUB_SUPPLIER, CARA_BAYAR, KET_BAYAR, 
+ PEMAKAI, DISCOUNT, STATUS, TGL_UPDATE, CONTACT_P, 
+ JABATAN_P, BIAYA_PEMBUATAN, BIAYA_PAJAK, BIAYA_PLN, REVISI, 
+ NO_KONFIRMASI, TGL_REVISI, DIVISI, NASIONAL, TAGIHAN_SUPP, 
+ CETAK, TRANSFER, TRANSFER_BATAL, TGL_CETAK, TGL_TRANSFER, 
+ NO_PERJ_TAHUNAN, NO_BOOKING, NMGROUP, TANDATANGAN, DIST_PENGIRIMAN, 
+ SURAT_BATAL, TGL_TANDATANGAN, TGL_BUAT_PERJANJIAN, KOMPENSASI, VERSI, 
+ TANDATERIMA, TGL_TANDATERIMA, U_ID_TANDATERIMA, FLAG_BLISTRIK, NILAI_BLISTRIK, 
+ LUAS_SEWA, CONTACT_P2, JABATAN_P2, ALAMAT, NPWP, 
+ CONTACT, JABATAN, NM_BAYAR, NM_CABANG, NM_DISPLAY, 
+ ALAMAT_CAB, NPWP_CAB, REKREGULER, REKFRANCHISE, TELP, 
+ FAX, NM_SUPPLIER)
+AS 
+SELECT     TrMs_Perjanjian.*, Ms_Supplier.Alamat AS Alamat, Ms_Supplier.NPWP AS NPWP, Ms_Supplier.Contact AS Contact, 
+                      Ms_Supplier.Jabatan AS Jabatan, Ms_CaraBayar.Nm_Bayar AS Nm_Bayar, Ms_Cabang.Nm_Cabang AS Nm_Cabang, 
+                      Ms_Display.Nm_Display AS Nm_Display, Ms_Cabang.Alamat AS Alamat_Cab, Ms_Cabang.NPWP AS NPWP_Cab, 
+                      Ms_Cabang.RekReguler AS RekReguler, Ms_Cabang.RekFranchise AS RekFranchise, Ms_Supplier.Telp AS Telp, 
+                      Ms_Supplier.Fax AS Fax, Ms_Supplier.Nm_SupplierNPWP AS Nm_Supplier
+FROM         TrMs_Perjanjian INNER JOIN
+                      Ms_Supplier ON TrMs_Perjanjian.Kd_Supplier = Ms_Supplier.Kd_Supplier INNER JOIN
+                      Ms_CaraBayar ON TrMs_Perjanjian.Cara_Bayar = Ms_CaraBayar.Kd_Bayar INNER JOIN
+                      Ms_Cabang ON TrMs_Perjanjian.Kd_Cabang = Ms_Cabang.Kd_Cabang AND 
+                      TrMs_Perjanjian.Kd_Unit = Ms_Cabang.Kd_Unit INNER JOIN
+                      Ms_Display ON TrMs_Perjanjian.Kd_Display = Ms_Display.Kd_Display
+/
+
+----------------------------------------------------BARU---------------------------------------------------------------
+
+CREATE OR REPLACE VIEW VW_PERJANJIAN
+(NO_PERJANJIAN, KD_UNIT, KD_CABANG, KD_SUPPLIER, TGL_AWAL, 
+ TGL_AKHIR, SATUAN_SEWA, LAMA_HRG, LAMA_SEWA, TGL_PERJANJIAN, 
+ KD_DISPLAY, TOTAL_NILAI, SUB_SUPPLIER, CARA_BAYAR, KET_BAYAR, 
+ PEMAKAI, DISCOUNT, STATUS, TGL_UPDATE, CONTACT_P, 
+ JABATAN_P, BIAYA_PEMBUATAN, BIAYA_PAJAK, BIAYA_PLN, REVISI, 
+ NO_KONFIRMASI, TGL_REVISI, DIVISI, NASIONAL, TAGIHAN_SUPP, 
+ CETAK, TRANSFER, TRANSFER_BATAL, TGL_CETAK, TGL_TRANSFER, 
+ NO_PERJ_TAHUNAN, NO_BOOKING, NMGROUP, TANDATANGAN, DIST_PENGIRIMAN, 
+ SURAT_BATAL, TGL_TANDATANGAN, TGL_BUAT_PERJANJIAN, KOMPENSASI, VERSI, 
+ TANDATERIMA, TGL_TANDATERIMA, U_ID_TANDATERIMA, FLAG_BLISTRIK, NILAI_BLISTRIK, 
+ LUAS_SEWA, CONTACT_P2, JABATAN_P2, ALAMAT, NPWP, 
+ CONTACT, JABATAN, NM_BAYAR, NM_CABANG, NM_DISPLAY, 
+ ALAMAT_CAB, NPWP_CAB, REKREGULER, REKFRANCHISE, TELP, 
+ FAX, NM_SUPPLIER)
+AS 
+SELECT     NO_PERJANJIAN, TrMs_Perjanjian.KD_UNIT, TrMs_Perjanjian.KD_CABANG, TrMs_Perjanjian.KD_SUPPLIER, TGL_AWAL, 
+					 TGL_AKHIR, SATUAN_SEWA, LAMA_HRG, LAMA_SEWA, TGL_PERJANJIAN, 
+					 TrMs_Perjanjian.KD_DISPLAY, TOTAL_NILAI, SUB_SUPPLIER, CARA_BAYAR, KET_BAYAR, 
+					 PEMAKAI, DISCOUNT, STATUS, TrMs_Perjanjian.TGL_UPDATE, CONTACT_P, 
+					 JABATAN_P, BIAYA_PEMBUATAN, BIAYA_PAJAK, BIAYA_PLN, REVISI, 
+					 NO_KONFIRMASI, TGL_REVISI, DIVISI, NASIONAL, TAGIHAN_SUPP, 
+					 CETAK, TRANSFER, TRANSFER_BATAL, TGL_CETAK, TGL_TRANSFER, 
+					 NO_PERJ_TAHUNAN, NO_BOOKING, NMGROUP, TANDATANGAN, DIST_PENGIRIMAN, 
+					 SURAT_BATAL, TGL_TANDATANGAN, TGL_BUAT_PERJANJIAN, KOMPENSASI, VERSI, 
+					 TANDATERIMA, TGL_TANDATERIMA, U_ID_TANDATERIMA, FLAG_BLISTRIK, NILAI_BLISTRIK, 
+					 LUAS_SEWA, CONTACT_P2, JABATAN_P2, Ms_Supplier.Alamat AS Alamat, Ms_Supplier.NPWP AS NPWP, Ms_Supplier.Contact AS Contact, 
+                      Ms_Supplier.Jabatan AS Jabatan, Ms_CaraBayar.Nm_Bayar AS Nm_Bayar, Ms_Cabang.Nm_Cabang AS Nm_Cabang, 
+                      Ms_Display.Nm_Display AS Nm_Display, Ms_Cabang.Alamat AS Alamat_Cab, Ms_Cabang.NPWP AS NPWP_Cab, 
+                      Ms_Cabang.RekReguler AS RekReguler, Ms_Cabang.RekFranchise AS RekFranchise, Ms_Supplier.Telp AS Telp, 
+                      Ms_Supplier.Fax AS Fax, Ms_Supplier.Nm_SupplierNPWP AS Nm_Supplier
+FROM         TrMs_Perjanjian INNER JOIN
+                      Ms_Supplier ON TrMs_Perjanjian.Kd_Supplier = Ms_Supplier.Kd_Supplier INNER JOIN
+                      Ms_CaraBayar ON TrMs_Perjanjian.Cara_Bayar = Ms_CaraBayar.Kd_Bayar INNER JOIN
+                      Ms_Cabang ON TrMs_Perjanjian.Kd_Cabang = Ms_Cabang.Kd_Cabang AND 
+                      TrMs_Perjanjian.Kd_Unit = Ms_Cabang.Kd_Unit INNER JOIN
+                      Ms_Display ON TrMs_Perjanjian.Kd_Display = Ms_Display.Kd_Display
+/

@@ -1,0 +1,333 @@
+{
+    "FLAG_PROSES": "Y",
+    "JML_RECORD": 65,
+    "TGL_STATUS": "2022-11-24T01:00:00",
+    "TGL_PROSES": "0022-11-24T12:00:00",
+    "DATA": [
+        {
+            "KD_DISPLAY": "CW",
+            "NM_DISPLAY": "White Cooler",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "EA",
+            "NM_DISPLAY": "Extension Cabinet Atas",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "EB",
+            "NM_DISPLAY": "Extension Cabinet Bawah",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "HB",
+            "NM_DISPLAY": "Hanging Banner",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "BC",
+            "NM_DISPLAY": "Block Cooler",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "EC",
+            "NM_DISPLAY": "End Cap",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "CT",
+            "NM_DISPLAY": "COC Tiang",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "SD",
+            "NM_DISPLAY": "Standing Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "BB",
+            "NM_DISPLAY": "Billboard",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "BM",
+            "NM_DISPLAY": "Block Shelfing Inner /Shelf",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "BR",
+            "NM_DISPLAY": "Backwall Rokok",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "BS",
+            "NM_DISPLAY": "Block Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "BW",
+            "NM_DISPLAY": "Wall Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "CB",
+            "NM_DISPLAY": "COC  Baterai",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "CC",
+            "NM_DISPLAY": "COC Candies",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "CD",
+            "NM_DISPLAY": "COC Depan",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "CK",
+            "NM_DISPLAY": "COC Kasir",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "CL",
+            "NM_DISPLAY": "Cooler",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "CN",
+            "NM_DISPLAY": "Freezer ( C )",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "CO",
+            "NM_DISPLAY": "COC Tiang",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "CP",
+            "NM_DISPLAY": "COC Samping",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "CR",
+            "NM_DISPLAY": "Cooler ( S )",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "CS",
+            "NM_DISPLAY": "Clip Strip",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "DP",
+            "NM_DISPLAY": "Dispenser",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "DR",
+            "NM_DISPLAY": "Dispenser Rokok",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "DS",
+            "NM_DISPLAY": "Display Roti",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "DU",
+            "NM_DISPLAY": "Dancing Up",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "EF",
+            "NM_DISPLAY": "End Cap Display - Depan (H&B)",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "ER",
+            "NM_DISPLAY": "End Cap Display-Belakang (H&B)",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "FD",
+            "NM_DISPLAY": "Floor Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "FR",
+            "NM_DISPLAY": "Free Rak",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "FZ",
+            "NM_DISPLAY": "Freezer ( I )",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "GL",
+            "NM_DISPLAY": "Window Display",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "GP",
+            "NM_DISPLAY": "Gondola - Prime",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "GR",
+            "NM_DISPLAY": "End Cap Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "HG",
+            "NM_DISPLAY": "Hanger",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "IC",
+            "NM_DISPLAY": "Freezer ( I )",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "IF",
+            "NM_DISPLAY": "Infomart",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "IS",
+            "NM_DISPLAY": "Instore Promo",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "KS",
+            "NM_DISPLAY": "Clip Strip",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "MG",
+            "NM_DISPLAY": "Moving Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "MP",
+            "NM_DISPLAY": "Media Promosi",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "NB",
+            "NM_DISPLAY": "Neon Box",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "NI",
+            "NM_DISPLAY": "Neon Sign Indoor",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "NK",
+            "NM_DISPLAY": "Neon Box diatas Kasir",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "NR",
+            "NM_DISPLAY": "Dispensary Rokok",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "NS",
+            "NM_DISPLAY": "Neon Sign",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "PP",
+            "NM_DISPLAY": "Promo Display",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "RF",
+            "NM_DISPLAY": "Tiang Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "RH",
+            "NM_DISPLAY": "Tiang Display ( 1/2 bagian )",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "RK",
+            "NM_DISPLAY": "Display Khusus",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "RP",
+            "NM_DISPLAY": "Panel",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "RT",
+            "NM_DISPLAY": "Tiang Display",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "SA",
+            "NM_DISPLAY": "Standing Arclyric",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "SF",
+            "NM_DISPLAY": "Standing Freezer ( IC )",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "SH",
+            "NM_DISPLAY": "Front Display",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "SO",
+            "NM_DISPLAY": "Freezer ( S )",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "SR",
+            "NM_DISPLAY": "Standing Display Roti",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "TS",
+            "NM_DISPLAY": "Trolley Sticker",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "WG",
+            "NM_DISPLAY": "Wing Display",
+            "TMI": "Y"
+        },
+        {
+            "KD_DISPLAY": "WK",
+            "NM_DISPLAY": "Wing  Kaos Kaki",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "WN",
+            "NM_DISPLAY": "Wagon",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "WR",
+            "NM_DISPLAY": "Wing Display",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "WS",
+            "NM_DISPLAY": "Wing Stationery",
+            "TMI": "N"
+        },
+        {
+            "KD_DISPLAY": "AC",
+            "NM_DISPLAY": "Acrylic Cooler",
+            "TMI": "N"
+        }
+    ]
+}
